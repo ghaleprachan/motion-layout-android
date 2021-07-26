@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+        <KeyFrameSet>
+            <!--<KeyPosition
+                motion:framePosition="25"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/ivStar"
+                motion:percentY="0.6" />-->
+
+            <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/ivStar"
+                motion:percentY="0.2" />
+            <KeyAttribute
+                motion:framePosition="0"
+                motion:motionTarget="@id/ivStar">
+                <CustomAttribute
+                    motion:attributeName="colorFilter"
+                    motion:customColorValue="#3F51B5" />
+            </KeyAttribute>
+            <KeyAttribute
+                motion:framePosition="50"
+                motion:motionTarget="@id/ivStar">
+                <CustomAttribute
+                    motion:attributeName="colorFilter"
+                    motion:customColorValue="#FFB612" />
+            </KeyAttribute>
+            <KeyAttribute
+                motion:framePosition="100"
+                motion:motionTarget="@id/ivStar">
+                <CustomAttribute
+                    motion:attributeName="colorFilter"
+                    motion:customColorValue="#F44336" />
+            </KeyAttribute>
+
+
+            <!--<KeyPosition
+                motion:framePosition="25"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@id/ivStar"
+                motion:percentX="0.1"
+                motion:percentY="0.6" />
+            <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@id/ivStar"
+                motion:percentX="0.3"
+                motion:percentY="0.5" />
+            <KeyPosition
+                motion:framePosition="75"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@id/ivStar"
+                motion:percentX="0.1"
+                motion:percentY="0.6" />-->
+        </KeyFrameSet>
+        <OnSwipe motion:touchAnchorId="@+id/ivStar" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start" />
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/ivStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent" />
+    </ConstraintSet>
+</MotionScene>
